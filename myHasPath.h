@@ -16,6 +16,7 @@ bool hasPath(const char *matrix, int rows, int cols, const char *str) {
 	int pathLength=0;
 	for (int i=0; i!=rows; ++i) {
 		for (int j=0; j!=cols; ++j) {
+//			cout<<i<<" "<<j<<" "<<pathLength<<"Begin."<<endl;
 			if ( hasPathCore(matrix, rows, cols, i, j, pathLength, str, visited) ) return true;
 		}
 	}
@@ -26,9 +27,8 @@ bool hasPath(const char *matrix, int rows, int cols, const char *str) {
 
 bool hasPathCore(const char *matrix, int rows, int cols, int row, int col, int &pathLength, const char *str, bool *visited) {
 
-	cout<<row<<" "<<col<<endl;
-
 	int index=row*cols+col;
+//	cout<<row<<" "<<col<<" "<<pathLength<<endl;
 
 	//到str的尾巴了。
 	if (str[pathLength]=='\0') return true;
@@ -51,7 +51,7 @@ bool hasPathCore(const char *matrix, int rows, int cols, int row, int col, int &
 		}
 	}
 
-
+	cout<<pathLength<<endl;
 	return mark;
 }
 #endif

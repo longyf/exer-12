@@ -15,6 +15,7 @@ bool hasPath(const char *matrix, int rows, int cols, const char *str) {
 	int pathLength=0;
 	for (int row=0; row<rows; ++row) {
 		for (int col=0; col<cols; ++col) {
+			cout<<row<<" "<<col<<endl;
 			if (hasPathCore(matrix,rows,cols,row,col,str,pathLength,visited)) {
 				return true;
 			}
@@ -46,7 +47,7 @@ bool hasPathCore(const char *matrix, int rows, int cols, int row, int col, const
 		}
 	}
 
-	cout<<row<<" "<<col<<" "<<hasPath<<endl;
+//	cout<<row<<" "<<col<<" "<<hasPath<<endl;
 	return hasPath;
 }
 
